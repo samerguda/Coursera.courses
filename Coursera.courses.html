@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coursera Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #e7e7e7;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        li:hover {
+            background: #d7d7d7;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .serial {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Coursera Courses</h1>
+        <ul id="course-list">
+            <!-- JavaScript will populate this -->
+        </ul>
+    </div>
+
+    <script>
+        const courses = [
+            { name: 'Spanish Vocabulary', link: '#' },
+            { name: 'Developing Back-End Apps with Node.js and Express', link: '#' },
+            { name: 'PHP Tutorial', link: '#' },
+            { name: 'Laravel', link: '#' },
+            { name: 'Server-side JavaScript with Node.js', link: '#' },
+            { name: 'Introduction to Cloud Computing', link: '#' },
+            { name: 'React Native', link: '#' },
+            { name: 'Introduction to VueJS Framework', link: '#' },
+            { name: 'Databases and SQL for Data Science with Python', link: '#' },
+            { name: 'Introduction to Dart', link: '#' },
+            { name: 'Introduction to Data Science in Python', link: '#' },
+            { name: 'Fundamentals of Graphic Design', link: '#' },
+            { name: 'Getting started with Firebase Cloud Firestore', link: '#' },
+            { name: 'Introduction to Android Mobile Application Development', link: '#' },
+            { name: 'Crash Course on Python', link: '#' },
+            { name: 'Getting started with Flutter Development', link: '#' },
+            { name: 'Build a Full Website using WordPress', link: '#' },
+        ];
+
+        const courseList = document.getElementById('course-list');
+        courses.forEach((course, index) => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = course.link;
+            link.textContent = course.name;
+
+            const serial = document.createElement('span');
+            serial.className = 'serial';
+            serial.textContent = (index + 1) + '.';
+
+            listItem.appendChild(serial);
+            listItem.appendChild(link);
+            courseList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
